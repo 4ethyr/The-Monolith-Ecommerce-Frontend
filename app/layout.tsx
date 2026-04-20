@@ -39,7 +39,7 @@ export default function RootLayout({
       className={`${notoSerif.variable} ${manrope.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       {/* Definimos "font-sans" como padrão aqui, que no tailwind será a Manrope */}
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>{children}</body>
     </html>
   );
 }

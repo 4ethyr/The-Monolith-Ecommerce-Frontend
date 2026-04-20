@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
-  basePath: "/The-Monolith-Ecommerce-Frontend",
+  // output: "export", // Descomente apenas quando fazer build para produção
+  // basePath: "/The-Monolith-Ecommerce-Frontend", // Para GitHub Pages ou subdiretório
   images: {
     unoptimized: true,
   },
