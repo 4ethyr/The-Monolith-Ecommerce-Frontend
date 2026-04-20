@@ -4,6 +4,7 @@ import { NAV_ITEMS } from "@/constants/NAV_ITEMS";
 import { Menu, ShoppingBag, User, X } from "lucide-react";
 import { useState } from "react";
 import { useIsMobile } from "@/hooks/useIsMobile/useIsMobile";
+import Link from "next/link";
 
 const Header = () => {
   const [openCart, setOpenCart] = useState(false);
@@ -46,7 +47,7 @@ const Header = () => {
                           key={item.id}
                           className="text-tertiary hover:text-primary text-lg pr-8 uppercase my-4"
                         >
-                          <a href={item.href} className="tracking-widest">{item.label}</a>
+                          <Link href={item.href} className="tracking-widest">{item.label}</Link>
                         </li>
                       ))}
                     </ul>
@@ -67,7 +68,7 @@ const Header = () => {
                       key={item.id}
                       className="text-tertiary hover:text-primary text-sm mr-8 uppercase"
                     >
-                      <a href={item.href} className="tracking-widest">{item.label}</a>
+                      <Link href={item.href} className="tracking-widest">{item.label}</Link>
                     </li>
                   ))}
                 </ul>
