@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* 1. Definição do seu Design System no padrão Tailwind v4 */
+@theme inline {
+  /* Cores do Design System */
+  --color-primary: #000000;
+  --color-secondary: #222222;
+  --color-tertiary: #444444;
+  --color-neutral: #ffffff;
+  --color-surface: #e5e5e5;
+  --color-destructive: #b91c1c;
+
+  /* Tipografia mapeando as variáveis do layout.tsx */
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-noto-serif);
+  --font-label: var(--font-space-grotesk);
+
+  /* Border Radius */
+  --radius-layout: 24px;
+  --radius-component: 8px;
+}
+
+/* 2. Variáveis base da aplicação */
+:root {
+  /* Usando Neutral para o fundo padrão e Secondary para texto padrão */
+  --background: var(--color-neutral);
+  --foreground: var(--color-secondary);
+}
+
+/* 3. Comportamento para Dark Mode (Opcional, você pode ajustar depois) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--color-primary);
+    --foreground: var(--color-neutral);
+  }
+}
+
+/* 4. Estilos base globais */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  /* A fonte agora é herdada automaticamente pela classe antialiased/font-sans no layout.tsx */
+}
