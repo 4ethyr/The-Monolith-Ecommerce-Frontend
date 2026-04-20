@@ -18,7 +18,7 @@ const Header = () => {
     <>
       {isMobile ? (
         <>
-          <header className="bg-neutral flex items-center p-4 sticky">
+          <header className="bg-neutral flex items-center p-4 sticky top-0 z-50">
             <nav className="flex items-center justify-between w-full">
               <div className="flex items-center">
                 <h2 className="text-primary text-2xl font-bold">
@@ -31,28 +31,27 @@ const Header = () => {
                   className="text-tertiary hover:text-primary"
                   onClick={handleOpenCart}
                 >
-                 {openCart ? <X/> : <Menu />}
+                  {openCart ? <X /> : <Menu />}
                 </button>
               </div>
 
-
               {openCart && (
-                 <div className="transition-all ease-in-out duration-200 flex items-center absolute top-32 right-0 w-full bg-neutral z-20 h-full">
+                <div className="transition-all ease-in-out duration-200 flex items-start absolute top-[100%] left-0 w-full bg-neutral z-40 h-[calc(100vh-64px)]">
                   {/* <div className="overlay"></div> */}
-                 
-                    <nav className="bg-neutral w-full p-4" >
-                      <ul className="flex-col">
-                        {NAV_ITEMS.map((item) => (
-                          <li
-                            key={item.id}
-                            className="text-tertiary hover:text-primary text-lg pr-8 uppercase my-4"
-                          >
-                            <a href={item.href}>{item.label}</a>
-                          </li>
-                        ))}
-                      </ul>
-                    </nav>
-                  </div>
+
+                  <nav className="bg-neutral w-full p-4" >
+                    <ul className="flex flex-col">
+                      {NAV_ITEMS.map((item) => (
+                        <li
+                          key={item.id}
+                          className="text-tertiary hover:text-primary text-lg pr-8 uppercase my-4"
+                        >
+                          <a href={item.href} className="tracking-widest">{item.label}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                </div>
               )}
             </nav>
           </header>
